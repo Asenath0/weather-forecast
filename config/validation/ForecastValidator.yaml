@@ -1,0 +1,39 @@
+App\Entity\Forecast:
+    properties:
+        temperature:
+            -   NotBlank:
+                    groups: [ Create, Edit ]
+            -   Range:
+                    min: -999
+                    max: 999
+                    notInRangeMessage: 'Temperature must be between {{ min }} and {{ max }}.'
+                    groups: [ Create, Edit ]
+
+        humidity:
+            -   NotBlank:
+                    groups: [ Create, Edit ]
+            -   Range:
+                    min: 0
+                    max: 100
+                    notInRangeMessage: 'Humidity must be between {{ min }} and {{ max }}.'
+                    groups: [ Create, Edit ]
+
+        windSpeed:
+            -   NotBlank:
+                    groups: [ Create, Edit ]
+            -   Range:
+                    min: -999.9
+                    max: 999.9
+                    notInRangeMessage: 'Wind speed must be between {{ min }} and {{ max }}.'
+                    groups: [ Create, Edit ]
+
+        rain:
+            -   NotBlank:
+                    groups: [ Create, Edit ]
+            -   Range:
+                    min: 0
+                    max: 9999.9
+                    notInRangeMessage: 'Rain must be between {{ min }} and {{ max }}.'
+                    groups: [ Create, Edit ]
+
+

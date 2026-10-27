@@ -1,0 +1,24 @@
+# config/validation/validation.yaml
+App\Entity\Location:
+    properties:
+        longitude:
+            - NotBlank:
+                  groups: [Create, Edit]
+            - Range:
+                  min: -180
+                  max: 180
+                  notInRangeMessage: 'Longitude must be between {{ min }} and {{ max }}.'
+                  groups: [Create, Edit]
+
+        latidude:
+            - NotBlank:
+                  groups: [Create, Edit]
+            - Range:
+                  min: -90
+                  max: 90
+                  notInRangeMessage: 'Latitude must be between {{ min }} and {{ max }}.'
+                  groups: [Create, Edit]
+
+        city:
+            - NotBlank:
+                  groups: [Create, Edit]
