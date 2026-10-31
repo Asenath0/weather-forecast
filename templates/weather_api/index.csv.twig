@@ -1,0 +1,11 @@
+city,country,date,temperature C,temperature F,humidity,rain,windSpeed
+{% for measurement in forecasts -%}
+    {{ city }},
+    {{- country }},
+    {{- measurement.date|date('Y-m-d') }},
+    {{- measurement.temperature }},
+    {{- measurement.fahrenheit }},
+    {{- measurement.humidity }},
+    {{- measurement.rain }},
+    {{- measurement.windSpeed }}
+{% endfor %}
