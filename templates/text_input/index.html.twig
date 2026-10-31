@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TextInputController!{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+    {% if submittedText is not empty %}
+        <h1>Submitted Text:</h1>
+        <p>{{ submittedText }}</p>
+        <p>{{ submittedText|raw }}</p>
+    {% endif %}
+{% endblock %}
